@@ -1,6 +1,12 @@
 import { CardProps } from "./Card.types";
-import "./Cards.css";
 
-export const Card = (props: CardProps) => {
-  return <div>Card Contents</div>;
+export const Card = ({ children, ...htmlProps }: CardProps) => {
+  return (
+    <div
+      className="card w-96 card-bordered bg-base-100 shadow-xl px-lg cursor-pointer hover:bg-sky-700/25"
+      {...htmlProps}
+    >
+      <div className="card-body">{children}</div>
+    </div>
+  );
 };
